@@ -4,19 +4,20 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/golangci/golangci-lint
-    rev: v1.55.2
+    rev: v1.59.1
     hooks:
       - id: golangci-lint
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.38.0
+    rev: v0.41.0
     hooks:
       - id: markdownlint
+        exclude: '^CHANGELOG.md$'
   - repo: https://github.com/mrtazz/checkmake
     rev: 0.2.2
     hooks:
@@ -36,5 +37,5 @@ ci:
   autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
   autoupdate_schedule: monthly
   # NB: hadolint not included in pre-commit.ci
-  skip: [check-hooks-apply, check-useless-excludes, hadolint]
+  skip: [check-hooks-apply, check-useless-excludes, hadolint, golangci-lint]
   submodules: false
