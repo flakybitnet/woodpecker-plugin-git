@@ -3,11 +3,11 @@
 # CI_MANUAL_TAG=0.0.1 - application release version, gets priority over CI_COMMIT_TAG
 
 variables:
-  - &debian_image 'public.ecr.aws/docker/library/debian:bookworm-slim'
-  - &golang_image 'public.ecr.aws/docker/library/golang:1.22.4-bookworm'
-  - &kaniko_image "gcr.io/kaniko-project/executor:v1.23.1-debug"
-  - &skopeo_image "quay.io/containers/skopeo:v1.15.1"
-  - &awscli_image "public.ecr.aws/aws-cli/aws-cli:2.17.2"
+  - &debian_image "public.ecr.aws/docker/library/debian:bookworm-slim"
+  - &golang_image "public.ecr.aws/docker/library/golang:1.22.5-bookworm"
+  - &kaniko_image "gcr.io/kaniko-project/executor:v1.23.2-debug"
+  - &skopeo_image "quay.io/containers/skopeo:v1.15.2"
+  - &awscli_image "public.ecr.aws/aws-cli/aws-cli:2.17.18"
 
 when:
   - branch: main
